@@ -136,7 +136,7 @@ impl SessionStore for RedisSessionStore {
 
             Some(expiry) => {
                 connection
-                    .set_ex(id, string, expiry.as_secs() as usize)
+                    .set_ex(id, string, expiry.as_secs())
                     .await?
             }
         };
